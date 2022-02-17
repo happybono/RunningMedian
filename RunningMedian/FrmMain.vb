@@ -386,4 +386,8 @@ Public Class FrmMain
     Private Sub FrmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         dpivalue = dpicalc(Me, 100)
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        addButton.Enabled = CBool(TextBox1.TextLength) AndAlso CBool(IsNumeric(TextBox1.Text))
+    End Sub
 End Class
