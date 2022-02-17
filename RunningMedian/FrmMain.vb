@@ -2,6 +2,9 @@
 
 Public Class FrmMain
 
+
+    Dim dpivalue As Double
+
     Dim sourceList As New List(Of Double)
     Dim medianList As New List(Of Double)
 
@@ -378,5 +381,9 @@ Public Class FrmMain
         Next
 
         ListBox1.Select()
+    End Sub
+
+    Private Sub FrmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        dpivalue = dpicalc(Me, 100)
     End Sub
 End Class
