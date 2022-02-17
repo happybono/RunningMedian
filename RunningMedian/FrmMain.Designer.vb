@@ -121,6 +121,7 @@ Partial Class FrmMain
         '
         'addButton
         '
+        Me.addButton.Enabled = False
         Me.addButton.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold)
         Me.addButton.Location = New System.Drawing.Point(314, 11)
         Me.addButton.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
