@@ -1,5 +1,5 @@
 # RunningMedian
-vb.net project to determine the running median by means of a data on the listbox control.
+vb.net project to determine the running median by means of data on the Listbox control.
 
 ## What's New
 <details>
@@ -16,6 +16,7 @@ vb.net project to determine the running median by means of a data on the listbox
 ## Features
 - Copy and paste the necessary numeric data or drag and drop the data from the Microsoft Excel sheet or other spreadsheet software into the listbox.
 - To calibrate and convert original data using the running median method, click on the [calculate] button.
+- Correcting for outliers in a running median.
 
 ## Known Issues
 - Results may not be accurate when you use less than the 5 numeric data samples.
