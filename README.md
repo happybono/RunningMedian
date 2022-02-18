@@ -16,6 +16,7 @@ VB.NET project to determine the running median by means of data on the Listbox c
 ## Features
 - Copy and paste the necessary numeric data or drag and drop the data from the Microsoft Excel sheet or other spreadsheet software into the listbox.
 - To calibrate and convert original data using the running median method, click on the [Calculate] button.
+- Applied quick sort algorithm.
 - Correcting for outliers in a running median.
 
 ## Demonstration
