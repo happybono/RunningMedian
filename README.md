@@ -22,6 +22,7 @@ VB.NET project to determine the running median by means of data on the Listbox c
 
 ## Demonstration
 ![Final Product](Screenshot.png)
+<br> <br>
 ![Final Results](Running Median Calibration Sample (PM10).png)
 
 ## Known Issues
