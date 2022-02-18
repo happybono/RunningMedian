@@ -10,7 +10,7 @@ vb.net project to determine the running median by means of a data on the listbox
 > Initial release.
 
 #### February 17, 2022
-> Fixed several bugs
+> Fixed several bugs.
 </details>
 
 ## Features
