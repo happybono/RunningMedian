@@ -10,7 +10,7 @@ VB.NET project to determine the running median by means of data on the Listbox c
 > Initial release.
 
 #### February 17, 2022
-> Fixed several bugs.
+> Fixed several bugs.</br>
 > Hi-DPI monitors support.
 </details>
 
