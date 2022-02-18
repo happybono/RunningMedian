@@ -18,5 +18,8 @@ vb.net project to determine the running median by means of data on the Listbox c
 - To calibrate and convert original data using the running median method, click on the [calculate] button.
 - Correcting for outliers in a running median.
 
+## Demonstration Screenshots
+![Final Product](Screenshots.png)
+
 ## Known Issues
 - Results may not be accurate when you use less than the 5 numeric data samples.
