@@ -19,7 +19,7 @@ vb.net project to determine the running median by means of data on the Listbox c
 - Correcting for outliers in a running median.
 
 ## Demonstration Screenshots
-![Final Product](Screenshots.png)
+![Final Product](Screenshot.png)
 
 ## Known Issues
 - Results may not be accurate when you use less than the 5 numeric data samples.
