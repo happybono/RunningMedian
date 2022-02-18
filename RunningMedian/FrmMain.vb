@@ -134,11 +134,14 @@ Public Class FrmMain
             Next
         End If
 
-
-        If RadioButton1.Checked Then
-            MiddleMedian()
+        If ListBox1.Items.Count > 0 Then
+            If RadioButton1.Checked Then
+                MiddleMedian()
+            Else
+                AllMedian()
+            End If
         Else
-            AllMedian()
+            Exit Sub
         End If
 
         DisplayResults()
@@ -149,6 +152,7 @@ Public Class FrmMain
         If e.KeyData = Keys.Enter Then
             ListBox1.Items.Add(Val(TextBox1.Text))
             TextBox1.Text = String.Empty
+            e.SuppressKeyPress = True
         End If
     End Sub
 
