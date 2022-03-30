@@ -22,6 +22,9 @@ VB.NET project to determine the running median by means of data on the Listbox c
 - Applied quick sort algorithm.
 - Correcting for outliers in a running median.
 
+## Principle Demonstration
+[![Data Calibration Demo Using the Running Median Method.](https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/2dbb2e91-d9c1-4799-beea-9b1e6a9e6a85.gif?ClientID=vimeo-core-prod&Date=1648603639&Signature=a785b7936ee37beb6a0e010ae71a8215ae16bdf9)](https://vimeo.com/693794659 "Data Calibration Demo Using the Running Median Method.")
+
 ## Demonstration
 ![Final Product](Screenshot.png)
 
