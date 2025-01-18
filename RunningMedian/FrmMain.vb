@@ -11,6 +11,7 @@ Public Class FrmMain
     Private Sub addButton_Click(sender As Object, e As EventArgs) Handles addButton.Click
         ListBox1.Items.Add(Val(TextBox1.Text))
         TextBox1.Text = String.Empty
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Sub FillTestData()
@@ -146,6 +147,8 @@ Public Class FrmMain
 
         DisplayResults()
         sourceList.Clear()
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
+        lblCnt2.Text = "Count : " & ListBox2.Items.Count
     End Sub
 
     Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
@@ -154,6 +157,8 @@ Public Class FrmMain
             TextBox1.Text = String.Empty
             e.SuppressKeyPress = True
         End If
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub copyButton1_Click(sender As Object, e As EventArgs) Handles copyButton1.Click
@@ -167,11 +172,15 @@ Public Class FrmMain
     Private Sub clearButton1_Click(sender As Object, e As EventArgs) Handles clearButton1.Click
         ListBox1.Items.Clear()
         copyButton1.Enabled = False
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub clearButton2_Click(sender As Object, e As EventArgs) Handles clearButton2.Click
         ListBox2.Items.Clear()
         copyButton2.Enabled = False
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
+        lblCnt2.Text = "Count : " & ListBox2.Items.Count
     End Sub
 
     Private Sub deleteButton2_Click(sender As Object, e As EventArgs)
@@ -188,6 +197,8 @@ Public Class FrmMain
             ListBox1.Items.RemoveAt(en.Current)
             en = ListBox2.SelectedIndices.GetEnumerator()
         Loop
+
+        lblCnt2.Text = "Count : " & ListBox2.Items.Count
     End Sub
 
     Private Sub deleteButton1_Click(sender As Object, e As EventArgs) Handles deleteButton1.Click
@@ -205,6 +216,8 @@ Public Class FrmMain
             ListBox1.Items.RemoveAt(en.Current)
             en = ListBox1.SelectedIndices.GetEnumerator()
         Loop
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub ListBox1_DragDrop(sender As Object, e As DragEventArgs) Handles ListBox1.DragDrop
@@ -251,6 +264,8 @@ Public Class FrmMain
             ListBox1.Items.Add(CDbl(item.Value))
             ListBox1.TopIndex = ListBox1.Items.Count - 1
         Next
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub ListBox1_DragEnter(sender As Object, e As DragEventArgs) Handles ListBox1.DragEnter
@@ -279,6 +294,8 @@ Public Class FrmMain
             ListBox1.Items.Add(Val(item.Value))
             ListBox1.TopIndex = ListBox1.Items.Count - 1
         Next
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub selectAll1_Click(sender As Object, e As EventArgs) Handles selectAll1.Click
@@ -324,45 +341,51 @@ Public Class FrmMain
             deleteButton1.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.Delete) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.Delete Then
             clearButton1.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.C) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.C Then
             copyButton1.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.V) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.V Then
             pasteButton.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.A) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.A Then
             selectAll1.PerformClick()
         End If
 
         If e.KeyData = Keys.Escape Then
             sClrButton1.PerformClick()
         End If
+
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
+
     Private Sub ListBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles ListBox2.KeyDown
-        If e.KeyData = (Keys.Control Or Keys.C) Then
+
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.C Then
             e.Handled = True
             copyButton2.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.A) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.A Then
             e.Handled = True
             selectAll2.PerformClick()
         End If
 
-        If e.KeyData = (Keys.Control Or Keys.Delete) Then
+        If (e.Modifiers And Keys.Control) = Keys.Control AndAlso e.KeyCode = Keys.Delete Then
             clearButton2.PerformClick()
         End If
 
         If e.KeyData = Keys.Escape Then
             sClrButton2.PerformClick()
         End If
+
+        lblCnt2.Text = "Count : " & ListBox2.Items.Count
     End Sub
 
     Private Sub sClrButton1_Click(sender As Object, e As EventArgs) Handles sClrButton1.Click
@@ -374,6 +397,7 @@ Public Class FrmMain
         Next
 
         ListBox1.Select()
+        lblCnt1.Text = "Count : " & ListBox1.Items.Count
     End Sub
 
     Private Sub sClrButton2_Click(sender As Object, e As EventArgs) Handles sClrButton2.Click
@@ -385,6 +409,7 @@ Public Class FrmMain
         Next
 
         ListBox1.Select()
+        lblCnt2.Text = "Count : " & ListBox2.Items.Count
     End Sub
 
     Private Sub FrmMain_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -393,5 +418,9 @@ Public Class FrmMain
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         addButton.Enabled = CBool(TextBox1.TextLength) AndAlso CBool(IsNumeric(TextBox1.Text))
+    End Sub
+
+    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
