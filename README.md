@@ -1,5 +1,5 @@
 # RunningMedian
-VB.NET project to determine the running median by means of data on the Listbox control.
+VB.NET project to determine the running median by medians of data on the Listbox control.
 
 ## What's New
 <details>
